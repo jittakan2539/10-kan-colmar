@@ -38,11 +38,8 @@ header {
     display: flex;
     justify-content: flex-end;
     align-items: center;
-
-    background-color: aqua;
   }
   .nav-right ul {
-    background-color: aqua;
     display: flex;
     flex-direction: rows;
     list-style: none;
@@ -57,14 +54,20 @@ header {
     display: none;
   }
 
-  @media only screen and (max-width: 480px) {
+  @media (max-width: 480px) {
+    .nav-bar {
+      margin: 0;
+      padding: 0;
+      height: 64;
+    }
     .nav-left,
     .nav-right {
       display: none;
     }
-    .nav-bar .nav-mobile {
-        display: reset;
-      }
+    .nav-mobile {
+      display: flex;
+      width: 100%;
+      justify-content: space-around;
     }
   }
 }
@@ -112,12 +115,25 @@ h2 {
     color: white;
     text-decoration: none;
   }
+
+  .hero-mobile {
+    display: none;
+  }
+
+  @media (max-width: 480px) {
+    
+    .hero-mobile {
+      display: block;
+    }
+    
+  }
 }
+
+/* Information section */
 
 .information {
   display: flex;
   .info-left {
-    background-color: orange;
     width: 60%;
     img {
       width: 100%;
@@ -138,10 +154,29 @@ h2 {
   }
 
   margin: 32px 24px;
+
+  .info-mobile {
+    display: none;
+  }
+  @media (max-width: 480px) {
+    .info-left, .info-right {
+      display: none;
+    }
+
+    .info-mobile {
+      display: flex;
+      flex-direction: column;
+      img {
+        width: 100%;
+      }
+    }
+
+  }
 }
 
+/* This is course section */
 .course {
-  background-color: var(--light-grey);
+  background-color: grey;
   padding: 32px 72px;
   text-align: center;
 
@@ -153,6 +188,37 @@ h2 {
     display: flex;
     justify-content: center;
     gap: 32px;
+  }
+
+  .course-mobile {
+    display: none;
+  }
+
+  @media (max-width: 480px) {
+    border-bottom: 1px solid grey;
+    .course-top,
+    .course-bottom {
+      display: none;
+    }
+
+    .course-mobile {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 8px;
+      }
+      h3 {
+        text-align: left;
+        width: 100%;
+        background-color: var(--light-grey);
+        padding: 16px;
+        padding-bottom: 24px;
+        margin: 4px;
+      }
+      
+    }
+
+    background-color: white;
   }
 }
 
@@ -173,18 +239,21 @@ h2 {
   }
 }
 
+/* Thesis section */
+
 .thesis {
   h2 {
     text-align: center;
   }
-
+  /* Hide */
+  .thesis-mobile {
+    display: none;
+  }
   .thesis-in {
-    background-color: red;
     display: flex;
     margin: 24px;
 
     .thesis-left {
-      background-color: aqua;
       width: 60%;
 
       video {
@@ -216,14 +285,33 @@ h2 {
       }
     }
   }
+
+  /* thesis-mobile */
+  @media (max-width: 480px) {
+    .thesis-in {
+      display: none;
+    }
+
+    .thesis-mobile {
+      display: flex;
+      video {
+        width: 100%;
+      }
+
+      padding-top: 16px;
+      padding-bottom: 16px;
+    }
+  }
 }
 
 .fisma {
   background-color: var(--light-grey);
 }
 
+/* This is footer. */
+
 .footer {
-  border-top: 1px solid black;
+  border-top: 1px solid var(--light-grey);
   display: flex;
   justify-content: space-between;
   padding-top: 16px;
@@ -234,5 +322,13 @@ h2 {
   .footer-right {
     display: flex;
     gap: 1rem;
+  }
+
+  @media (max-width: 480px) {
+    padding-bottom: 16px;
+    margin-bottom: 0;
+    .footer-right {
+      display: none;
+    }
   }
 }
