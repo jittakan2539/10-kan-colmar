@@ -52,7 +52,20 @@ header {
     }
   }
 
-  @media (max-width) {
+  /* hide */
+  .nav-mobile {
+    display: none;
+  }
+
+  @media only screen and (max-width: 480px) {
+    .nav-left,
+    .nav-right {
+      display: none;
+    }
+    .nav-bar .nav-mobile {
+        display: reset;
+      }
+    }
   }
 }
 
